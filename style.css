@@ -1,0 +1,54 @@
+/* まついわ町 観光ガイド（教材用に作成した架空の町の案内サイト）の見た目 */
+/* どの端末でも同じに見えるよう、色はすべて指定しています */
+body { margin: 0; background: #ffffff; }
+.mt-site, .mt-site *, .mt-site *::before, .mt-site *::after { box-sizing: border-box; }
+.mt-site { font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Noto Sans JP', Meiryo, system-ui, sans-serif; color: #111418; font-size: 15px; line-height: 1.7; background: #ffffff; }
+a { color: #0b5d7a; }
+.site-header { background: #0b5d7a; color: #ffffff; padding: 10px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; }
+.logo { font-weight: 700; font-size: 1.1em; color: #ffffff; text-decoration: none; }
+.menu { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.menu a { color: #ffffff; text-decoration: none; font-size: 0.9em; border-bottom: 2px solid transparent; }
+.menu a:hover { border-bottom-color: #ffffff; }
+.hero { background: linear-gradient(180deg, #d8eef5 0%, #eaf6f9 60%, #f6efe3 100%); padding: 40px 20px 32px; text-align: center; }
+.hero-sub { color: #0b5d7a; font-weight: 700; letter-spacing: 0.1em; font-size: 0.85em; }
+.hero-title { font-size: 2em; font-weight: 700; color: #083f53; margin: 4px 0; }
+.hero-copy { color: #111418; }
+.hero-note { color: #4b5563; font-size: 0.8em; margin-top: 8px; }
+.section { padding: 28px 20px; }
+.section.sand { background: #f6efe3; }
+.section-title { font-size: 1.35em; font-weight: 700; color: #083f53; margin: 0 0 4px; }
+.section-lead { color: #4b5563; font-size: 0.9em; margin-bottom: 14px; }
+.grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.card { flex: 1 1 250px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px 16px; text-decoration: none; color: #111418; display: block; }
+.card:hover { border-color: #0b5d7a; }
+.rank { display: inline-block; background: #c2410c; color: #ffffff; font-weight: 700; font-size: 0.8em; border-radius: 99px; padding: 0 10px; margin-bottom: 4px; }
+.card-name { font-weight: 700; font-size: 1.1em; color: #083f53; }
+.tag { display: inline-block; font-size: 0.75em; color: #0b5d7a; border: 1px solid #0b5d7a; border-radius: 99px; padding: 0 8px; margin-left: 6px; vertical-align: middle; }
+.score { color: #c2410c; font-weight: 700; }
+.score span { color: #4b5563; font-weight: 400; font-size: 0.85em; margin-left: 6px; }
+.card-text { font-size: 0.9em; color: #4b5563; }
+.more { font-size: 0.85em; color: #0b5d7a; font-weight: 700; margin-top: 6px; }
+.spot { padding: 24px 20px; border-top: 1px solid #e5e7eb; }
+.spot-name { font-size: 1.3em; font-weight: 700; color: #083f53; }
+.spot-body { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; }
+.spot-left { flex: 1 1 300px; }
+.spot-right { flex: 1 1 240px; }
+.info { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.info th, .info td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #e5e7eb; font-size: 0.9em; vertical-align: top; }
+.info th { width: 6.5em; color: #0b5d7a; white-space: nowrap; background: #f6efe3; }
+.bars { border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 14px; }
+.bar-row { display: flex; align-items: center; gap: 8px; font-size: 0.85em; }
+.bar-row b { color: #c2410c; width: 2.5em; }
+.bar { flex: 1; height: 10px; background: #e5e7eb; border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: #c2410c; }
+details { margin-top: 12px; }
+summary { cursor: pointer; font-weight: 700; color: #0b5d7a; padding: 8px 0; }
+.review { border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; background: #ffffff; }
+.review-top { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.review-stars { color: #c2410c; letter-spacing: 1px; }
+.review-meta { font-size: 0.8em; color: #4b5563; }
+.to-top { font-size: 0.85em; text-align: right; margin-top: 8px; }
+.about p { margin: 0 0 6px; }
+.site-footer { background: #083f53; color: #ffffff; padding: 20px; font-size: 0.85em; }
+.site-footer a { color: #ffffff; }
+.footer-name { font-weight: 700; font-size: 1.05em; }

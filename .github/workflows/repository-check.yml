@@ -1,0 +1,62 @@
+name: repository-check
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify copied website and download
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlsplit
+          from zipfile import ZipFile
+          root = Path('.')
+          record = json.loads((root / 'checks/copy-record.json').read_text())
+          assert record['source_commit'] == '3db25752a837e1603bb5216a13b0080564666808'
+          assert {x['path'] for x in record['files']} == {'README.md', 'index.html', 'style.css'}
+          for item in record['files']:
+              raw = (root / item['path']).read_bytes()
+              assert len(raw) == item['bytes'] and hashlib.sha256(raw).hexdigest() == item['sha256']
+          archive = root / record['archive']['path']
+          assert len(archive.read_bytes()) == record['archive']['bytes']
+          assert hashlib.sha256(archive.read_bytes()).hexdigest() == record['archive']['sha256']
+          with ZipFile(archive) as z:
+              assert set(z.namelist()) == {'README.md', 'index.html', 'style.css'}
+              for name in z.namelist():
+                  assert z.read(name) == (root / name).read_bytes()
+          class Page(HTMLParser):
+              ids = set()
+              links = []
+              reviews = 0
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if 'id' in attrs: self.ids.add(attrs['id'])
+                  for key in ['href', 'src']:
+                      if key in attrs: self.links.append(attrs[key])
+                  if 'review' in attrs.get('class', '').split(): self.reviews += 1
+          page = Page()
+          page.feed((root / 'index.html').read_text())
+          assert page.reviews == 91
+          assert len([x for x in page.ids if x.startswith('mt-spot-')]) == 8
+          for link in page.links:
+              target = urlsplit(link)
+              assert not target.scheme and not target.netloc
+              assert target.fragment in page.ids if link.startswith('#') else (root / target.path).is_file()
+          browser = json.loads((root / 'checks/browser-check.json').read_text())
+          assert browser['errors'] == [] and browser['external_requests'] == []
+          assert all(x['source_copy_pixels_identical'] for x in browser['viewports'])
+          print('Verified exact source files, ZIP, 8 places, 91 reviews and internal links.')
+          PY

@@ -1,0 +1,41 @@
+{
+  "date_jst": "2026-11-16",
+  "method": "元ファイルとコピー先の実ファイルをローカルHTTPサーバーで配信。外部サイトの応答や処理の模擬なし。",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "source_copy_pixels_identical": true,
+      "screenshot_sha256": "85fd062af9b9546db7321385abe8399abe37e6c4de0f983b021346cf205c7028",
+      "no_horizontal_overflow": true
+    },
+    {
+      "width": 390,
+      "height": 900,
+      "source_copy_pixels_identical": true,
+      "screenshot_sha256": "e34436395fb5102a072acd8ffe10c11123364503955fff6a12beda8d0472de23",
+      "no_horizontal_overflow": true
+    }
+  ],
+  "external_requests": [],
+  "actual_file_url": {
+    "status": "unverified",
+    "reason": "管理環境でfile URLがERR_BLOCKED_BY_ADMINISTRATOR。ローカルHTTPの実ファイル表示とは区別。"
+  },
+  "errors": [],
+  "anchor_navigation_and_review_expansion": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "5a4b1959013c4e0bb46c75799f6c4c6aa9717103b2e7439f8c4ec254a4b15a02"
+    },
+    {
+      "path": "index.html",
+      "sha256": "ead803b7cc36f9a5539d3ecb04430a1396835763762e8b868d1499cfef34a75c"
+    },
+    {
+      "path": "style.css",
+      "sha256": "a105e9edc9a6e91633fc8d42c4fa75f9d194bc2c31ed08a03b4605e20cae129e"
+    }
+  ]
+}

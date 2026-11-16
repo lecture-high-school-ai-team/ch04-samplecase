@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-11-16",
+  "source_repository": "funakoshi-takehiro/high-school-ai-4-test",
+  "source_commit": "3db25752a837e1603bb5216a13b0080564666808",
+  "destination_repository": "lecture-high-school-ai-team/ch04-samplecase",
+  "base_commit": "45f9bd4a14b69d9a67cb3f266e430bd2566c2970",
+  "issue": 1,
+  "method": "元の全3ファイルをルートへ完全コピー。元の内容は変更しない。",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 500,
+      "sha256": "5a4b1959013c4e0bb46c75799f6c4c6aa9717103b2e7439f8c4ec254a4b15a02"
+    },
+    {
+      "path": "index.html",
+      "bytes": 41279,
+      "sha256": "ead803b7cc36f9a5539d3ecb04430a1396835763762e8b868d1499cfef34a75c"
+    },
+    {
+      "path": "style.css",
+      "bytes": 4171,
+      "sha256": "a105e9edc9a6e91633fc8d42c4fa75f9d194bc2c31ed08a03b4605e20cae129e"
+    }
+  ],
+  "archive": {
+    "path": "downloads/まついわ町_観光ガイド.zip",
+    "bytes": 8806,
+    "sha256": "5f9fdbe6ed3c4df21f6923617cd033f430151778e89467d10d9d1abb99dc1255"
+  },
+  "visibility": "public",
+  "pages_enabled": false,
+  "self_audit": {
+    "date_jst": "2026-11-16",
+    "all_source_files_byte_identical": true,
+    "source_tracked_file_count": 3,
+    "all_files_at_repository_root": true,
+    "site_content_changed": false,
+    "browser_checks": "browser-check.json",
+    "pc_mobile_pixel_identical": true,
+    "place_count": 8,
+    "review_count": 91,
+    "external_requests": 0,
+    "actual_file_url": "unverified: managed browser policy",
+    "scope": "元の公開サイトの3ファイルと取得ZIP・検証記録のみ。公開設定の変更・Pages設定・元サイト削除は行わない。"
+  }
+}
